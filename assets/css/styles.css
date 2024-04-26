@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --bg: #04067c;
+    --primary: #f75f07;
+    --border: #ccc;
+    --text: #000;
+    --white: #fff;
+    --font: "Open Sans", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    color: var(--text);
+    background-color: var(--border);
+}
+
+
+#root {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+        'nav nav'
+        'aside section'
+        'footer footer'
+    ;
+}
+
+/*navbar*/
+.header {
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    grid-area: nav;
+}
+
+.header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.header a {
+    color: #fff;
+}
+
+/*AsideBar*/
+
+
+ .menu {
+    margin-bottom: 2rem;
+    border-left: 1px solid var(--border);
+    padding: 2rem;
+    grid-area: aside;
+}
+
+ .menu h3 {
+    margin-bottom: 0.5rem;
+}
+
+ .menu ul {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    line-height: 1.5rem;
+}
+ .menu ul li {
+    list-style: none;
+    margin: 0px;
+}
+
+ .menu a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+ .menu a:hover {
+    text-decoration: underline;
+}
+
+
+/*GrillaDeProductos*/
+.gallery {
+    padding: 3rem 2rem;
+    grid-area: section;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.gallery h3 {
+    margin-bottom: 1rem;
+}
+
+.gallery .card {
+    display: flex;
+    min-height: 100px;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.gallery .card a {
+    color: var(--text);
+}
+
+.gallery .card button {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    object-fit: cover;
+    background-color: var(--bg);
+    color: var(--white);
+    border-color: var(--bg);
+    font-size: large;
+}
+.gallery .card button:hover {
+    color: var(--primary);
+}
+
+.gallery .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+ /*Footer*/
+footer {
+    grid-area: footer;
+    text-align: center;
+    background: var(--white);
+    color: var(--text);
+    padding: 2rem;
+}
+
